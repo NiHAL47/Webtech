@@ -1,0 +1,194 @@
+<html>
+
+<head> 
+<title>Lab task 2</title>
+<style>
+    .first{
+  color: blue;
+  opacity: .6;}
+
+</style>
+</head>
+
+<body>
+
+    <form method="POST" action="<?php echo $_SERVER["PHP_SELF"];?>">
+        <table>
+            <tr>
+                <td>
+                    <fieldset>
+                        <legend>NAME</legend>
+                        <table>
+
+                            <tr>
+                                <td width="250px">
+                                    <input type="text" name="Name" value="" />
+                                </td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <hr>
+                                    <input type="submit" name="" value="Submit">
+
+                                </td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                </td>
+            </tr>
+
+            <table>
+            <tr>
+                <td>
+                    <fieldset>
+                        <legend>EMAIL</legend>
+                        <table>
+
+                            <tr>
+                                <td width="250px">
+                                    <input type="email" name="Email" value="" />
+                                </td>
+                                
+                            </tr>
+
+                            <tr>
+                                <td>
+                                <div class="first">example@domain.com</div>
+                                    <hr>
+                                    <input type="submit" name="" value="Submit">
+
+                                </td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                </td>
+            </tr>
+
+            <table>
+            <tr>
+                <td>
+                    <fieldset>
+                        <legend>DATE OF BIRTH</legend>
+                        <table>
+
+                            <tr>
+                                <td width="250px">
+                                    <input type="Date" name="dateof" value="" />
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <hr>
+                                    <input type="submit" name="" value="Submit">
+
+                                </td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                </td>
+            </tr>
+
+            <table>
+            <tr>
+                <td>
+                    <fieldset>
+                        <legend>GENDER</legend>
+                        <table>
+
+                        <input type="radio" name="gender" value="female">Female
+                        <input type="radio" name="gender" value="male">Male
+                        <input type="radio" name="gender" value="other">Other
+
+                        <tr>
+                                <td>
+                                    <hr>
+                                    <input type="submit" name="" value="Submit">
+
+                                </td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                </td>
+            </tr>
+            
+            <table>
+            <tr>
+                <td>
+                    <fieldset>
+                        <legend>DGREE</legend>
+                        <table>
+
+                        <input type="checkbox" name="dgree" value="SSC">SSC
+                        <input type="checkbox" name="dgree" value="HSC">HSC
+                        <input type="checkbox" name="dgree" value="BSc">BSc
+                        <input type="checkbox" name="dgree" value="MSc">MSc
+                        
+                        <tr>
+                                <td>
+                                    <hr>
+                                    <input type="submit" name="" value="Submit">
+
+                                </td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                </td>
+            </tr>
+
+            <table>
+            <tr>
+                <td>
+                    <fieldset>
+                        <legend>BLOOD GROUP</legend>
+                        <table>
+                        <label for="Group">Choose a Blood Group:</label>
+                        <select name="Group" id="Group">
+                            <option value="A+">A+</option>
+                            <option value="A-">O-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">O+</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>               
+                        </select>
+                        
+                        <tr>
+                                <td>
+                                    <hr>
+                                    <input type="submit" name="" value="Submit">
+
+                                </td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                </td>
+            </tr>
+
+
+
+    </form>
+
+    <?php
+    $nameErr=$emailErr="";
+    $name = $email= "";
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (empty($_POST["name"])) {
+          $nameErr = "Name is required";
+        } else {
+          $name = $_POST["name"];
+        }
+        if (empty($_POST["email"])) {
+            $emailErr = "email is required";
+        } else {
+            $email = $_POST["email"];
+        }
+    }
+?>
+
+</body>
+
+</html>
